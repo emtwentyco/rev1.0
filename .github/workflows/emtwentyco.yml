@@ -1,0 +1,37 @@
+name: EmtwentyCo Pipeline
+
+on:
+  workflow_dispatch:
+
+jobs:
+  stage-1:
+    name: Stage 1
+    runs-on: ubuntu-latest
+    steps:
+      - name: Echo EmtwentyCo
+        run: echo "EmtwentyCo"
+
+  stage-2:
+    name: Stage 2
+    runs-on: ubuntu-latest
+    needs: stage-1
+    steps:
+      - name: Echo EmtwentyCo
+        run: echo "EmtwentyCo"
+
+  stage-3:
+    name: Stage 3
+    runs-on: ubuntu-latest
+    needs: stage-1
+    steps:
+      - name: Echo EmtwentyCo
+        run: echo "EmtwentyCo"
+
+  stage-4:
+    name: Stage 4
+    runs-on: ubuntu-latest
+    needs: stage-3
+    environment: production
+    steps:
+      - name: Echo EmtwentyCo
+        run: echo "EmtwentyCo"
